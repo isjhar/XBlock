@@ -15,15 +15,6 @@ public class Driver {
         
         final GUI gui = new GUI();
         gui.initGUI();
-        
-//        SwingUtilities.invokeLater(new Runnable() {
-//            public void run() {
-//                //Turn off metal's use of bold fonts
-//                UIManager.put("swing.boldMetal", Boolean.FALSE);
-//                gui.initGUI();
-//            }
-//        });
-        
-        
+       
     }
 }

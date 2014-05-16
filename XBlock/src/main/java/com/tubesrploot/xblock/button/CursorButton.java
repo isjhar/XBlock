@@ -4,35 +4,45 @@
  */
 package com.tubesrploot.xblock.button;
 
-import java.awt.Container;
+import com.tubesrploot.xblock.panel.ToolBarExtensionPanel;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
-import javax.swing.JPanel;
-import javax.swing.JToolBar;
 
 /**
  *
  * @author Isjhar-pc
  */
 public class CursorButton extends JButton implements ActionListener{
-    private JToolBar toolbar;
-    private JPanel root;
-    public CursorButton(JPanel root, JToolBar toolbar){
+    private static final int N_HEIGHT = 40;
+    private static final int N_WIDTH = 40;
+    private CursorToolBar toolbar;
+    private Dimension dimension;
+    
+    public CursorButton(){
         super();
-        this.root = root;
-        this.toolbar = toolbar;
+        this.toolbar = new CursorToolBar();
+        setToolTipText("cursor button");
+        initDimension();
     }
     
     public void setActionListener(){
         this.addActionListener(this);
     }
+    private void initDimension(){
+        dimension = new Dimension(N_WIDTH, N_HEIGHT);
+        setPreferredSize(dimension);
+    }
+    
     public void actionPerformed(ActionEvent e) {
-        System.out.println("cursor button");
+        ToolBarExtensionPanel root = (ToolBarExtensionPanel) getParent().getParent().getParent().getParent().getComponent(2);
+        toolbar.setNWidth(root.getNWidth());
+        toolbar.setNHeight(root.getNHeight());
+        toolbar.initDimension();
         root.removeAll();
         root.add(toolbar);
         root.validate();
         root.repaint();
-        
     }
 }

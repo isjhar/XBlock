@@ -4,24 +4,33 @@
  */
 package com.tubesrploot.xblock.button;
 
-import java.awt.Container;
+import com.tubesrploot.xblock.panel.ToolBarExtensionPanel;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JPanel;
-import javax.swing.JToolBar;
 
 /**
  *
  * @author Isjhar-pc
  */
 public class EraserButton extends JButton implements ActionListener {
-    private JToolBar toolbar;
-    private JPanel root;
-    public EraserButton(JPanel root, JToolBar toolbar){
+    private static final int N_HEIGHT = 40;
+    private static final int N_WIDTH = 40;
+    private EraserToolBar toolbar;
+    private Dimension dimension;
+    
+    public EraserButton(){
         super();
-        this.root = root;
-        this.toolbar = toolbar;
+        this.toolbar = new EraserToolBar();
+        setToolTipText("eraser button");
+        initDimension();
+    }
+    
+    private void initDimension(){
+        dimension = new Dimension(N_WIDTH, N_HEIGHT);
+        setPreferredSize(dimension);
     }
     
     public void setActionListener(){
@@ -29,7 +38,10 @@ public class EraserButton extends JButton implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-        System.out.println("eraser button");
+        ToolBarExtensionPanel root = (ToolBarExtensionPanel) (JPanel) getParent().getParent().getParent().getParent().getComponent(2);
+        toolbar.setNWidth(root.getNWidth());
+        toolbar.setNHeight(root.getNHeight());
+        toolbar.initDimension();
         root.removeAll();
         root.add(toolbar);
         root.validate();
