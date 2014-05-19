@@ -20,7 +20,7 @@ public class TextButton extends JButton implements ActionListener{
     private static final int N_HEIGHT = 40;
     private static final int N_WIDTH = 40;
     private RectangleToolBar toolbar;
-    
+    //mengatur tampilan button
     public TextButton(){
         super();
         this.toolbar = new RectangleToolBar();
@@ -28,8 +28,8 @@ public class TextButton extends JButton implements ActionListener{
         setIcon(new ImageIcon("text.png"));
         initDimension();
     }
-    
-     private void initDimension(){
+    //pengimplementasian listener
+    private void initDimension(){
         Dimension dimension = new Dimension(N_WIDTH, N_HEIGHT);
         setPreferredSize(dimension);
     }
@@ -46,7 +46,7 @@ public class TextButton extends JButton implements ActionListener{
         root.add(getToolbar());
         root.validate();
         root.repaint();
-        
+        //pemasangan objek dalam canvas
         CanvasPanel canvas = (CanvasPanel) getParent().getParent().getParent().getParent().getComponent(1);
         canvas.getEditor().setTool(new TextCreationTool(new TextFigure()));
     }

@@ -22,7 +22,7 @@ public class NewFileMenuItem extends JMenuItem implements ActionListener{
         setIcon(new ImageIcon("docs.png"));
         setMnemonic(KeyEvent.VK_N);
     }
-    
+    //set action listener
     public void setActionListener(){
         this.addActionListener(this);
     }

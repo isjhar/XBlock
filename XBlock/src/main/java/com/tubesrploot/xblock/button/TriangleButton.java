@@ -19,7 +19,7 @@ public class TriangleButton extends JButton implements ActionListener{
     private static final int N_HEIGHT = 40;
     private static final int N_WIDTH = 40;
     private TriangleToolBar toolbar;
-    
+    //mengatur tampilan button
     public TriangleButton(){
         super();
         this.toolbar = new TriangleToolBar();
@@ -27,7 +27,7 @@ public class TriangleButton extends JButton implements ActionListener{
         setIcon(new ImageIcon("triangle.png"));
         initDimension();
     }
-    
+    //pengimplementasian listener
     public void setActionListener(){
         this.addActionListener(this);
     }
@@ -45,7 +45,7 @@ public class TriangleButton extends JButton implements ActionListener{
         root.add(getToolbar());
         root.validate();
         root.repaint();
-        
+        //pemasangan objek dalam canvas
         CanvasPanel canvas = (CanvasPanel) getParent().getParent().getParent().getParent().getComponent(1);
         canvas.getEditor().setTool(new SelectionTool());
     }

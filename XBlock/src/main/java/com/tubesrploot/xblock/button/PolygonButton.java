@@ -20,6 +20,7 @@ public class PolygonButton extends JButton implements ActionListener{
     private static final int N_HEIGHT = 40;
     private static final int N_WIDTH = 40;
     private PolygonToolBar toolbar;
+    //mengatur tampilan button
     public PolygonButton(){
         super();
         this.toolbar = new PolygonToolBar();
@@ -28,7 +29,7 @@ public class PolygonButton extends JButton implements ActionListener{
         initDimension();
         
     }
-    
+    //pengimplementasian listener
     private void initDimension(){
         Dimension dimension = new Dimension(N_WIDTH, N_HEIGHT);
         setPreferredSize(dimension);
@@ -47,7 +48,7 @@ public class PolygonButton extends JButton implements ActionListener{
         root.add(getToolbar());
         root.validate();
         root.repaint();
-        
+        //pemasangan objek dalam canvas
         CanvasPanel canvas = (CanvasPanel) getParent().getParent().getParent().getParent().getComponent(1);
         canvas.getEditor().setTool(new BezierTool(new BezierFigure(true)));
     }    

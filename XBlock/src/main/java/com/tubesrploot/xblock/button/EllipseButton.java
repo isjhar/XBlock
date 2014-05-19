@@ -20,7 +20,7 @@ public class EllipseButton extends JButton implements ActionListener {
     private static final int N_HEIGHT = 40;
     private static final int N_WIDTH = 40;
     private EllipseToolBar toolbar;
-    
+    //mengatur tampilan button
     public EllipseButton(){
         super();
         this.toolbar = new EllipseToolBar();
@@ -28,7 +28,7 @@ public class EllipseButton extends JButton implements ActionListener {
         setIcon(new ImageIcon("ellipse.png"));
         initDimension();
     }
-    
+    //pengimplementasian listener
     private void initDimension(){
         Dimension dimension = new Dimension(N_WIDTH, N_HEIGHT);
         setPreferredSize(dimension);
@@ -47,7 +47,7 @@ public class EllipseButton extends JButton implements ActionListener {
         root.add(getToolbar());
         root.validate();
         root.repaint();
-        
+        //pemasangan objek dalam canvas
         CanvasPanel canvas = (CanvasPanel) getParent().getParent().getParent().getParent().getComponent(1);
         canvas.getEditor().setTool(new CreationTool(new EllipseFigure()));
         
