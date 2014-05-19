@@ -22,6 +22,7 @@ public class PencilButton extends JButton implements ActionListener{
     private static final int N_HEIGHT = 40;
     private static final int N_WIDTH = 40;
     private LineToolBar toolbar;
+    //mengatur tampilan button
     public PencilButton(){
         super();
         this.toolbar = new LineToolBar();
@@ -30,7 +31,7 @@ public class PencilButton extends JButton implements ActionListener{
         initDimension();
         
     }
-    
+    //pengimplementasian listener
     private void initDimension(){
         Dimension dimension = new Dimension(N_WIDTH, N_HEIGHT);
         setPreferredSize(dimension);
@@ -49,7 +50,7 @@ public class PencilButton extends JButton implements ActionListener{
         root.add(toolbar);
         root.validate();
         root.repaint();
-        
+        //pemasangan objek dalam canvas
         CanvasPanel canvas = (CanvasPanel) getParent().getParent().getParent().getParent().getComponent(1);
         canvas.getEditor().setTool(new BezierTool(new BezierFigure()));
     }    
