@@ -43,7 +43,7 @@ public class Main {
                 "This software is licensed under LGPL or Creative Commons 3.0 Attribution.");
         model.setViewClassName("org.jhotdraw.samples.draw.DrawView");
         app.setModel(model);
-        app.launch(args);
+//        app.launch(args);
     }
     
 }

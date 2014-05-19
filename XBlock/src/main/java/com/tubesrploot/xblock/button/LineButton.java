@@ -4,11 +4,13 @@
  */
 package com.tubesrploot.xblock.button;
 
-import com.tubesrploot.xblock.panel.ToolBarExtensionPanel;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import org.jhotdraw.draw.LineFigure;
+import org.jhotdraw.draw.tool.CreationTool;
 
 /**
  *
@@ -18,17 +20,17 @@ public class LineButton extends JButton implements ActionListener{
     private static final int N_HEIGHT = 40;
     private static final int N_WIDTH = 40;
     private LineToolBar toolbar;
-    private Dimension dimension;
     public LineButton(){
         super();
         this.toolbar = new LineToolBar();
         setToolTipText("line button");
+        setIcon(new ImageIcon("line.png"));
         initDimension();
         
     }
     
     private void initDimension(){
-        dimension = new Dimension(N_WIDTH, N_HEIGHT);
+        Dimension dimension = new Dimension(N_WIDTH, N_HEIGHT);
         setPreferredSize(dimension);
     }
     
@@ -45,6 +47,9 @@ public class LineButton extends JButton implements ActionListener{
         root.add(toolbar);
         root.validate();
         root.repaint();
+        
+        CanvasPanel canvas = (CanvasPanel) getParent().getParent().getParent().getParent().getComponent(1);
+        canvas.getEditor().setTool(new CreationTool(new LineFigure()));
     }
     
 }

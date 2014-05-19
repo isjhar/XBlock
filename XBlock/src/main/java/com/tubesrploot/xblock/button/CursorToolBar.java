@@ -34,8 +34,6 @@ public class CursorToolBar extends JToolBar {
     public void setNWidth(int nWidth) {
         this.nWidth = nWidth;
     }
-    
-    
-    
+  
     
 }

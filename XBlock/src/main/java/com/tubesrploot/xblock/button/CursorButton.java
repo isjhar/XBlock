@@ -4,11 +4,12 @@
  */
 package com.tubesrploot.xblock.button;
 
-import com.tubesrploot.xblock.panel.ToolBarExtensionPanel;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import org.jhotdraw.draw.tool.SelectionTool;
 
 /**
  *
@@ -18,12 +19,12 @@ public class CursorButton extends JButton implements ActionListener{
     private static final int N_HEIGHT = 40;
     private static final int N_WIDTH = 40;
     private CursorToolBar toolbar;
-    private Dimension dimension;
     
     public CursorButton(){
         super();
         this.toolbar = new CursorToolBar();
         setToolTipText("cursor button");
+        setIcon(new ImageIcon("cursor_arrow.png"));
         initDimension();
     }
     
@@ -31,7 +32,7 @@ public class CursorButton extends JButton implements ActionListener{
         this.addActionListener(this);
     }
     private void initDimension(){
-        dimension = new Dimension(N_WIDTH, N_HEIGHT);
+        Dimension dimension = new Dimension(N_WIDTH, N_HEIGHT);
         setPreferredSize(dimension);
     }
     
@@ -44,5 +45,10 @@ public class CursorButton extends JButton implements ActionListener{
         root.add(toolbar);
         root.validate();
         root.repaint();
+        
+        CanvasPanel canvas = (CanvasPanel) getParent().getParent().getParent().getParent().getComponent(1);
+        canvas.getEditor().setTool(new SelectionTool());
     }
+    
+    
 }
