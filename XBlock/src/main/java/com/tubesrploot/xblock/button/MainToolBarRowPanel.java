@@ -25,12 +25,12 @@ public class MainToolBarRowPanel extends JPanel{
         initDimension();
         initLayout();
     }
-    
+    //pengaturan ukuran rowPanel
     private void initDimension(){
         Dimension dimension = new Dimension(nWidth, nHeight);
         setPreferredSize(dimension);
     }
-    
+    //mengatur tata letak dalam dimension
     private void initLayout(){
         layout = new FlowLayout();
         layout.setHgap(padding);
