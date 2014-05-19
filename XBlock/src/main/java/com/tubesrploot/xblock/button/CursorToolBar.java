@@ -35,5 +35,17 @@ public class CursorToolBar extends JToolBar {
         this.nWidth = nWidth;
     }
   
-    
+    /**
+     * @return the nHeight
+     */
+    public int getnHeight() {
+        return nHeight;
+    }
+
+    /**
+     * @return the nWidth
+     */
+    public int getnWidth() {
+        return nWidth;
+    }
 }

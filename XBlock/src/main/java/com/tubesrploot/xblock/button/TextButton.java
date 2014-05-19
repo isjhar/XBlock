@@ -9,9 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import org.jhotdraw.draw.RectangleFigure;
 import org.jhotdraw.draw.TextFigure;
-import org.jhotdraw.draw.tool.CreationTool;
 import org.jhotdraw.draw.tool.TextCreationTool;
 
 /**
@@ -41,16 +39,25 @@ public class TextButton extends JButton implements ActionListener{
     }
     public void actionPerformed(ActionEvent e) {
         ToolBarExtensionPanel root = (ToolBarExtensionPanel) getParent().getParent().getParent().getParent().getComponent(2);
-        toolbar.setNWidth(root.getNWidth());
-        toolbar.setNHeight(root.getNHeight());
-        toolbar.initDimension();
+        getToolbar().setNWidth(root.getNWidth());
+        getToolbar().setNHeight(root.getNHeight());
+        getToolbar().initDimension();
         root.removeAll();
-        root.add(toolbar);
+        root.add(getToolbar());
         root.validate();
         root.repaint();
         
         CanvasPanel canvas = (CanvasPanel) getParent().getParent().getParent().getParent().getComponent(1);
         canvas.getEditor().setTool(new TextCreationTool(new TextFigure()));
     }
+
+    /**
+     * @return the toolbar
+     */
+    public RectangleToolBar getToolbar() {
+        return toolbar;
+    }
+    
+    
     
 }

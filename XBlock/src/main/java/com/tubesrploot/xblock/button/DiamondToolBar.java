@@ -37,4 +37,18 @@ public class DiamondToolBar extends JToolBar{
     public void setNWidth(int nWidth) {
         this.nWidth = nWidth;
     }    
+    
+    /**
+     * @return the nHeight
+     */
+    public int getnHeight() {
+        return nHeight;
+    }
+
+    /**
+     * @return the nWidth
+     */
+    public int getnWidth() {
+        return nWidth;
+    }
 }

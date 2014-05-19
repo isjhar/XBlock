@@ -33,7 +33,7 @@ public class ArrowButton extends JButton implements ActionListener{
         initDimension();
     }
     
-     private void initDimension(){
+    private void initDimension(){
         Dimension dimension = new Dimension(N_WIDTH, N_HEIGHT);
         setPreferredSize(dimension);
     }
@@ -43,11 +43,11 @@ public class ArrowButton extends JButton implements ActionListener{
     }
     public void actionPerformed(ActionEvent e) {
         ToolBarExtensionPanel root = (ToolBarExtensionPanel) getParent().getParent().getParent().getParent().getComponent(2);
-        toolbar.setNWidth(root.getNWidth());
-        toolbar.setNHeight(root.getNHeight());
-        toolbar.initDimension();
+        getToolbar().setNWidth(root.getNWidth());
+        getToolbar().setNHeight(root.getNHeight());
+        getToolbar().initDimension();
         root.removeAll();
-        root.add(toolbar);
+        root.add(getToolbar());
         root.validate();
         root.repaint();
         
@@ -57,4 +57,13 @@ public class ArrowButton extends JButton implements ActionListener{
         af.set(END_DECORATION, new ArrowTip(0.35, 12, 11.3));
         canvas.getEditor().setTool(ct);
     }
+
+    /**
+     * @return the toolbar
+     */
+    public ArrowToolBar getToolbar() {
+        return toolbar;
+    }
+    
+    
 }

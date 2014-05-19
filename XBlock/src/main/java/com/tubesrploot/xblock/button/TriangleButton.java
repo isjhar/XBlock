@@ -38,15 +38,24 @@ public class TriangleButton extends JButton implements ActionListener{
     
     public void actionPerformed(ActionEvent e) {
         ToolBarExtensionPanel root = (ToolBarExtensionPanel) getParent().getParent().getParent().getParent().getComponent(2);
-        toolbar.setNWidth(root.getNWidth());
-        toolbar.setNHeight(root.getNHeight());
-        toolbar.initDimension();
+        getToolbar().setNWidth(root.getNWidth());
+        getToolbar().setNHeight(root.getNHeight());
+        getToolbar().initDimension();
         root.removeAll();
-        root.add(toolbar);
+        root.add(getToolbar());
         root.validate();
         root.repaint();
         
         CanvasPanel canvas = (CanvasPanel) getParent().getParent().getParent().getParent().getComponent(1);
         canvas.getEditor().setTool(new SelectionTool());
     }
+
+    /**
+     * @return the toolbar
+     */
+    public TriangleToolBar getToolbar() {
+        return toolbar;
+    }
+    
+    
 }

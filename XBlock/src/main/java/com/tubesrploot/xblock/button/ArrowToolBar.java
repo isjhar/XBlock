@@ -25,7 +25,7 @@ public class ArrowToolBar extends JToolBar{
     }
     
     public void initDimension(){
-        Dimension dimension = new Dimension(nWidth, nHeight);
+        Dimension dimension = new Dimension(getnWidth(), getnHeight());
         setPreferredSize(dimension);
     }
 
@@ -36,5 +36,19 @@ public class ArrowToolBar extends JToolBar{
     
     public void setNWidth(int nWidth) {
         this.nWidth = nWidth;
+    }
+
+    /**
+     * @return the nHeight
+     */
+    public int getnHeight() {
+        return nHeight;
+    }
+
+    /**
+     * @return the nWidth
+     */
+    public int getnWidth() {
+        return nWidth;
     }
 }
