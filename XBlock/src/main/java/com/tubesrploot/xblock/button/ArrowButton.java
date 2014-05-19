@@ -25,6 +25,7 @@ public class ArrowButton extends JButton implements ActionListener{
     private static final int N_HEIGHT = 40;
     private static final int N_WIDTH = 40;
     private ArrowToolBar toolbar;
+    //mengatur tampilan button
     public ArrowButton(){
         super();
         this.toolbar = new ArrowToolBar();
@@ -37,7 +38,7 @@ public class ArrowButton extends JButton implements ActionListener{
         Dimension dimension = new Dimension(N_WIDTH, N_HEIGHT);
         setPreferredSize(dimension);
     }
-    
+    //pengimplementasian listener
     public void setActionListener(){
         this.addActionListener(this);
     }
@@ -50,7 +51,7 @@ public class ArrowButton extends JButton implements ActionListener{
         root.add(toolbar);
         root.validate();
         root.repaint();
-        
+        //pemasangan objek dalam canvas
         CanvasPanel canvas = (CanvasPanel) getParent().getParent().getParent().getParent().getComponent(1);
         CreationTool ct = new CreationTool(new LineFigure());
         AbstractAttributedFigure af = (AbstractAttributedFigure) ct.getPrototype();
