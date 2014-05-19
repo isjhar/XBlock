@@ -12,6 +12,7 @@ import javax.swing.JPanel;
  *
  * @author Isjhar-pc
  */
+ //pembuatan panel untuk button sebelah kiri
 public class ToolBarPanel extends JPanel{
     private static final int N_HEIGHT = 600;
     private static final int N_WIDTH = 100;
@@ -22,12 +23,12 @@ public class ToolBarPanel extends JPanel{
         initLayout();
         initComponent();
     }
-    
+    //pengaturan ukuran panel sebelah kiri
     private void initDimension(){
         Dimension dimension = new Dimension(N_WIDTH, N_HEIGHT);
         setPreferredSize(dimension);
     }
-    
+    //mengatur tata letak panel agar lebih rapi
     private void initLayout(){
         FlowLayout layout = new FlowLayout();
         layout.setHgap(0);
