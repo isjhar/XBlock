@@ -19,7 +19,7 @@ public class CursorButton extends JButton implements ActionListener{
     private static final int N_HEIGHT = 40;
     private static final int N_WIDTH = 40;
     private CursorToolBar toolbar;
-    
+    //mengatur tampilan button
     public CursorButton(){
         super();
         this.toolbar = new CursorToolBar();
@@ -28,6 +28,7 @@ public class CursorButton extends JButton implements ActionListener{
         initDimension();
     }
     
+    //pengimplementasian listener
     public void setActionListener(){
         this.addActionListener(this);
     }
@@ -45,7 +46,7 @@ public class CursorButton extends JButton implements ActionListener{
         root.add(toolbar);
         root.validate();
         root.repaint();
-        
+        //pemasangan objek dalam canvas
         CanvasPanel canvas = (CanvasPanel) getParent().getParent().getParent().getParent().getComponent(1);
         canvas.getEditor().setTool(new SelectionTool());
     }
