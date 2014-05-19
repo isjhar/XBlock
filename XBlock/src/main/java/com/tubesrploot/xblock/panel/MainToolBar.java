@@ -46,7 +46,7 @@ public class MainToolBar extends JToolBar{
         setOrientation(JToolBar.VERTICAL);
         initComponent();
     }
-    
+    //pengaturan ukuran dalam maintoolbar
     private void initDimension(){
         Dimension dimension = new Dimension(nWidth, nHeight);
         setPreferredSize(dimension);
