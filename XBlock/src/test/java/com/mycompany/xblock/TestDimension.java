@@ -17,6 +17,7 @@ import com.tubesrploot.xblock.button.TriangleButton;
 import com.tubesrploot.xblock.panel.MainToolBar;
 import java.awt.event.ActionEvent;
 import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertNotNull;
 import junit.framework.TestCase;
 
 /**
@@ -73,11 +74,13 @@ public class TestDimension extends TestCase {
         assertEquals(triangle.getPreferredSize().width, width);   
     }
     
-    public void testToolBarDimension(){
-        int height = 600;
+    public void testMainToolBarDimension(){
         int width = 100;
-        
+        int height = 600;
         MainToolBar tb = new MainToolBar(width, height);
-       
+        assertEquals(tb.getnHeight(), height);
+        assertEquals(tb.getnWidth(), width);
+        
     }
+  
 }

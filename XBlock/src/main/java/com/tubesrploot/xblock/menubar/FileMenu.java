@@ -6,7 +6,6 @@ package com.tubesrploot.xblock.menubar;
 
 import java.awt.event.KeyEvent;
 import javax.swing.JMenu;
-import javax.swing.JMenuItem;
 
 /**
  *
@@ -24,4 +23,12 @@ public class FileMenu extends JMenu{
         newFile.setActionListener();
         add(newFile);
     }
+
+    /**
+     * @return the newFile
+     */
+    public NewFileMenuItem getNewFile() {
+        return newFile;
+    }
+    
 }

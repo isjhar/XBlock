@@ -17,4 +17,13 @@ public class MainMenuBar extends JMenuBar{
         fileMenu = new FileMenu();
         add(fileMenu);
     }
+
+    /**
+     * @return the fileMenu
+     */
+    public FileMenu getFileMenu() {
+        return fileMenu;
+    }
+    
+    
 }
