@@ -9,6 +9,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import org.jhotdraw.draw.TriangleFigure;
+import org.jhotdraw.draw.tool.CreationTool;
 import org.jhotdraw.draw.tool.SelectionTool;
 
 /**
@@ -47,7 +49,7 @@ public class TriangleButton extends JButton implements ActionListener{
         root.repaint();
         //pemasangan objek dalam canvas
         CanvasPanel canvas = (CanvasPanel) getParent().getParent().getParent().getParent().getComponent(1);
-        canvas.getEditor().setTool(new SelectionTool());
+        canvas.getEditor().setTool(new CreationTool(new TriangleFigure()));
     }
 
     /**
